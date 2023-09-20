@@ -36,10 +36,12 @@ public class Biblioteca {
 
     public void listarLivros() {
         for (Livro livro : livrosDisponiveis) {
+            System.out.println("********************");
             System.out.println("Titulo -> " + livro.getTitulo());
             System.out.println("Autor -> " + livro.getAutor());
             System.out.println("Disponibilidade -> " + livro.getDisponibilidade());
             System.out.println("Id Livro -> " + livro.getIdLivro());
+            System.out.println("*****************");
         }
     }
 }

@@ -5,6 +5,7 @@ public class BibliotecaApp {
         Scanner prompt = new Scanner(System.in);
         boolean exec = true;
         Biblioteca biblioteca = new Biblioteca();
+        Usuario usuario = null;
         do {
             System.out.println("******* BIBLIOTECA *******");
             System.out.println("1) CADASTRAR LIVRO");
@@ -13,7 +14,7 @@ public class BibliotecaApp {
             System.out.println("4) REALIZAR EMPRESTIMO");
             System.out.println("5) DEVOLUCAO");
             System.out.println("6) REMOVER LIVRO");
-            System.out.println("6) SAIR");
+            System.out.println("7) SAIR");
             System.out.println("**************************");
 
             System.out.println("Digite uma opcao:");
@@ -22,6 +23,7 @@ public class BibliotecaApp {
 
             switch (escolha) {
                 case 1:
+                    System.out.println("***** CADASTRO DE LISVRO *****");
                     System.out.println("Digite o titulo do livro:");
                     String titulo = prompt.nextLine();
 
@@ -40,14 +42,21 @@ public class BibliotecaApp {
                     biblioteca.listarLivros();
                     break;
                 case 3:
+                    System.out.println("***** CADASTRO DE USUARIO *****");
                     System.out.println("Digite o nome do usuario:");
                     String nome = prompt.nextLine();
 
                     System.out.println("Digite o id do usuario:");
                     String idUsuario = prompt.nextLine();
 
-                    Usuario usuario = new Usuario(idUsuario, nome);
+                    usuario = new Usuario(idUsuario, nome);
                     break;
+                case 4:
+                    System.out.println("Digite o livro que deseja reservar:");
+                    String id = prompt.nextLine();
+                    break;
+                case 5:
+                    exec = false;
             }
 
         } while (exec);
