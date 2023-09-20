@@ -39,6 +39,15 @@ public class BibliotecaApp {
                     System.out.println("****** Lista de livros ******");
                     biblioteca.listarLivros();
                     break;
+                case 3:
+                    System.out.println("Digite o nome do usuario:");
+                    String nome = prompt.nextLine();
+
+                    System.out.println("Digite o id do usuario:");
+                    String idUsuario = prompt.nextLine();
+
+                    Usuario usuario = new Usuario(idUsuario, nome);
+                    break;
             }
 
         } while (exec);

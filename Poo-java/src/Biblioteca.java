@@ -38,6 +38,8 @@ public class Biblioteca {
         for (Livro livro : livrosDisponiveis) {
             System.out.println("Titulo -> " + livro.getTitulo());
             System.out.println("Autor -> " + livro.getAutor());
+            System.out.println("Disponibilidade -> " + livro.getDisponibilidade());
+            System.out.println("Id Livro -> " + livro.getIdLivro());
         }
     }
 }
