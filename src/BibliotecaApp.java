@@ -60,6 +60,7 @@ public class BibliotecaApp {
                         biblioteca.realizarEmprestimo(livro, usuario);
                     }
                     System.out.println("Emprestimo realizado com sucesso!");
+
                     break;
                 case 0:
                     exec = false;
