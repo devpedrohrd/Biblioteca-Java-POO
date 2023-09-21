@@ -7,6 +7,7 @@ public class BibliotecaApp {
         Biblioteca biblioteca = new Biblioteca();
         Usuario usuario = null;
         Livro livro = null;
+
         do {
             System.out.println("******* BIBLIOTECA *******");
             System.out.println("1) CADASTRAR LIVRO");
