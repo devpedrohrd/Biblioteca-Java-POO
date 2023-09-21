@@ -58,6 +58,7 @@ public class BibliotecaApp {
                     String id = prompt.nextLine();
                     if (id.equals(livro.getIdLivro())) {
                         biblioteca.realizarEmprestimo(livro, usuario);
+                        livro.emprestar();
                     }
                     System.out.println("Emprestimo realizado com sucesso!");
                     break;
