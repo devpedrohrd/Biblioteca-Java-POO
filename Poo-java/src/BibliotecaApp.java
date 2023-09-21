@@ -6,6 +6,7 @@ public class BibliotecaApp {
         boolean exec = true;
         Biblioteca biblioteca = new Biblioteca();
         Usuario usuario = null;
+        Livro livro = null;
         do {
             System.out.println("******* BIBLIOTECA *******");
             System.out.println("1) CADASTRAR LIVRO");
@@ -33,7 +34,7 @@ public class BibliotecaApp {
                     System.out.println("Digite autor do livro:");
                     String autor = prompt.nextLine();
 
-                    Livro livro = new Livro(idLivro, titulo, autor, null);
+                    livro = new Livro(idLivro, titulo, autor, null);
                     biblioteca.adicionarLivro(livro);
                     System.out.println("Livro registrado com sucesso!");
                     break;
@@ -54,6 +55,10 @@ public class BibliotecaApp {
                 case 4:
                     System.out.println("Digite o livro que deseja reservar:");
                     String id = prompt.nextLine();
+                    if (id.equals(livro.getIdLivro())) {
+                        biblioteca.realizarEmprestimo(livro, usuario);
+                    }
+                    System.out.println("Emprestimo realizado com sucesso!");
                     break;
                 case 5:
                     exec = false;
