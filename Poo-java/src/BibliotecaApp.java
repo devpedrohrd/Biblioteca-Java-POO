@@ -9,17 +9,7 @@ public class BibliotecaApp {
         Livro livro = null;
 
         do {
-            System.out.println("******* BIBLIOTECA *******");
-            System.out.println("1) CADASTRAR LIVRO");
-            System.out.println("2) LISTAR LIVROS");
-            System.out.println("3) CADASTRAR USUARIO");
-            System.out.println("4) REALIZAR EMPRESTIMO");
-            System.out.println("5) DEVOLUCAO");
-            System.out.println("6) REMOVER LIVRO");
-            System.out.println("7) SAIR");
-            System.out.println("**************************");
-
-            System.out.println("Digite uma opcao:");
+            biblioteca.menu();
             int escolha = prompt.nextInt();
             prompt.nextLine();
 
