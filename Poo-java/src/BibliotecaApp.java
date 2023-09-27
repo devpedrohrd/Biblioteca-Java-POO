@@ -41,19 +41,29 @@ public class BibliotecaApp {
                     System.out.println("Digite o id do usuario:");
                     String idUsuario = prompt.nextLine();
 
-                    usuario = new Usuario(idUsuario, nome);
+                    usuario = new Usuario(idUsuario, nome, null);
                     break;
                 case 4:
-                    System.out.println("Digite o livro que deseja reservar:");
+                    System.out.println("Digite o ID do livro que deseja reservar:");
                     String id = prompt.nextLine();
                     if (id.equals(livro.getIdLivro())) {
                         biblioteca.realizarEmprestimo(livro, usuario);
                         livro.emprestar();
+                        System.out.println("Emprestimo realizado com sucesso!");
                     }
-                    System.out.println("Emprestimo realizado com sucesso!");
                     break;
                 case 5:
+                    if (usuario != null) {
+                        System.out.println("Digite o ID do livro que deseja devolver:");
+                        String idLivroDevolucao = prompt.nextLine();
+                        biblioteca.devolverEmprestimo(usuario, idLivroDevolucao);
+                    } else {
+                        System.out.println("Usuário não cadastrado.");
+                    }
+                    break;
+                case 6:
                     exec = false;
+                    break;
             }
 
         } while (exec);

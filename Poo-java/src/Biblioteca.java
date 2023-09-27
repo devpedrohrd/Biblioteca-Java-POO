@@ -30,6 +30,27 @@ public class Biblioteca {
         return false;
     }
 
+    private Livro encontrarLivroEmprestadoPorID(String idLivro, Usuario usuario) {
+        for (Livro livro : livrosDisponiveis) {
+            if (usuario.getLivroEmprestado().contains(idLivro)) {
+                return livro;
+            }
+        }
+        return null;
+    }
+
+    public void devolverEmprestimo(Usuario usuario, String idLivro) {
+
+        Livro livroDevolucao = encontrarLivroEmprestadoPorID(idLivro, usuario);
+
+        if (livroDevolucao != null) {
+            System.out.println("Livro devolvido com sucesso!");
+            livroDevolucao.devolver();
+        } else {
+            System.out.println("Livro não encontrado ou não emprestado por este usuário.");
+        }
+    }
+
     public boolean devolucao(Livro livro) {
         return livro.devolver();
     }
